@@ -2,22 +2,60 @@
 
 Instructions: Template for exit criteria for data science projects. This is concise document that includes an overview of the entire project, including details of each stage and learning. If a section isn't applicable (e.g. project didn't include a ML model), simply mark that section as "Not applicable". Suggested length between 5-20 pages. Code should mostly be within code repository (not in this document).
 
-Customer: <Enter Customer Name\>
+Customer: <Liander\>
 
-Team Members: <Enter team member' names. Please also enter relevant parties names, such as team lead, Account team, Business stakeholders, etc.\>
+Team Members: <Bart Bosveld, Yuri Gietman en Christine Gijsbertsen\>
 
 ##	Overview
 
 <Executive summary of entire solution, brief non-technical overview\>
 
+
 ##	Business Domain
-<Industry, business domain of customer\>
+Liander is een netbeheer dat leidingen en kabels aanlegt. Daarnaast beheert zij het energie netwerk in verschillende regio's. 
 
 ##	Business Problem
 <Business problem and exact use case(s), why it matters\>
+Liander heeft al sinds 1940 data gemeten op gebied van gas en elektriciteit. Ze hebben deze data maar hebben nog niet inzichtelijk welke campagne het beste zal werken, gericht op een variabele uit de meeting. Dit onderzoek is er op gericht in hoeverre de variabelen van invloed zijn op het gas en elektriciteitsverbruik. 
 
 ##	Data Processing
 <Schema of original datasets, how data was processed, final input data schema for model\>
+We hebben twee datasets gebruikt en dezen samengevoegd. De datasets meten het gas en electriciteit vanaf 1940 tot en met heden. De eerste dataset gaat over rijtjeshuizen en het tweede dataset gaat over twee-onder-een-kap woningen. De data is vervolgens per bouwjaar en per gezinssamenstelling opgeslagen. Bijvoorbeeld hieronder gecategoriseerd in bouwjaar en type gezin, in dit voorbeeld een jong alleenstaande vrouw. 
+
+| voor 1940 | 1940 t/m 1959 | 1960 t/m 1969 | 1970 t/m 1979 | 1980 t/m 1989 | 1990 t/m 1999 | 2000 t/m heden |
+|---------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------- |
+| E 3.487 | E 3.342 | E 3.782 | E 3.676 | E 3.394 | E 3.369 | E 2.998 |
+| G 2.212 | G 1.722 | G 1.677 | G 1.574 | G 1.416 | G 1.380 | G 1.054 | 
+
+Wij hebben de twee datasets samengevoegd tot een door het verbruik te meten variabelen (kolommem) type woning, bouwjaar, gezinssamenstelling, gasverbruik en elekticiteitsverbruik. 
+Bijvoorbeeld, 
+
+| Bouwjaar | gezinssamenstelling |type woning | elektriciteit | gas |
+| -------- | ------------------- | ---------- | ------------- | --- |
+| > 1940 | JA | rijtje | 3.487 | 2.212 | 
+
+Om de data efficient te verwerken hebben we de data categorisch opgeslagen. Hierbij gebruiken we de volgende afkortingen. 
+
+| Afkorting | uitleg |
+| --------- | ------ |
+| JA | jong alleenstaand |
+| JPZK | jong paar zonder kinderen |
+| GMAJK | gezin met alleen jonge kinderen |
+| GJOK | gezin met jonge en oudere kinderen |
+| MPZK | middelbaar paar zonder kinderen |
+| OPZK | ouder paar zonder kinderen |
+| MA | middelbaar allenstaand |
+| OA | ouder alleenstaand |
+
+Daarnaast zaten er in één tabel de volgende fouten, in de tabel gezin met jonge en oudere kinderen, bij het elektriciteitsverbruik. 
+
+
+| voor 1940 | 1940 t/m 1959 | 1960 t/m 1969 | 1970 t/m 1979 | 1980 t/m 1989 | 1990 t/m 1999 | 2000 t/m heden |
+|---------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------- |
+| E 4.71 | 6 E 4.51 | 6 E 4.423 | E 4.064 | E 4.35 | 8 E 4.985 | E 3.950|
+
+De laatste getallen zijn versprongen naar de volgende kolom. Dit is in het 'nieuwe' dataset goed gezet.
+Daarnaast zijn van de ouderen alleenstaand vanaf 2000 t/m heden geen variabelen gemeten. 
 
 ##	Modeling, Validation
 <Modeling techniques used, validation results, details of how validation conducted\>
