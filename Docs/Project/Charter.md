@@ -1,54 +1,40 @@
 # Project Charter
 
 ## Business background
+Omdat bij ons huidige project het niet mogelijk was om een data analyse te verrichten hebben we een data set van Liander gebruikt. Liander is een netbeheer dat leidingen en kabels aanlegt. Daarnaast beheert zij het energie netwerk in verschillende regio's.
 
-* Who is the client, what business domain the client is in.
-* What business problems are we trying to address?
+Het onderzoek houdt in een zoektoecht naar de relatie tussen het verbruik van gas en elektriciteit in relatie tot het bouwjaar van een huis, de gezinssamenstelling en het type huis. Door te onderzoeken of er een relatie tussen deze variabelen is kan er een advies worden gegeven aan Liander om verbeteringen te maken in hun business model.
 
 ## Scope
-* What data science solutions are we trying to build?
-* What will we do?
-* How is it going to be consumed by the customer?
+We zullen opzoek gaan naar een oplossing hoe Liander beter haar marketing campagnes kan positioneren door te kijken op welke gebieden hier het best op getarget kan worden. 
+
+We zullen data (rapportages van gas en energiegebruik) van Liander gebruiken om te analyseren en hier conclusies uit trekken. We zullen gaan onderzoeken in hoeverre de variabelen: bouwjaar, type woning en gezinssamenstelling van invloed zijn op het gas en elektriciteitsverbruik.
+
+De uitkomst van de analyses al gebruikt worden om sturing te geven aan de marketing campagnes. Om beter de producten te kunnen aanbieden die aansluiten bij de situatie van de klant. 
 
 ## Personnel
 * Who are on this project:
 	* Microsoft:
-		* Project lead
-		* PM
-		* Data scientist(s)
-		* Account manager
-	* Client:
-		* Data administrator
-		* Business contact
+		* Project lead: Witek ten Hove
+		* PM: Yuri
+		* Data scientist(s): Christine
+		* Account manager: Bart
+	* Client: deze is fictief. 
 	
 ## Metrics
-* What are the qualitative objectives? (e.g. reduce user churn)
-* What is a quantifiable metric  (e.g. reduce the fraction of users with 4-week inactivity)
-* Quantify what improvement in the values of the metrics are useful for the customer scenario (e.g. reduce the  fraction of users with 4-week inactivity by 20%) 
-* What is the baseline (current) value of the metric? (e.g. current fraction of users with 4-week inactivity = 60%)
-* How will we measure the metric? (e.g. A/B test on a specified subset for a specified period; or comparison of performance after implementation to baseline)
+Inzicht verkrijgen in hoe de variabelen: type woning, bouwjaar en gezinssamenstelling samen hangen met het elektricitets en gas verbruik. 
 
 ## Plan
-* Phases (milestones), timeline, short description of what we'll do in each phase.
+Eerst zal dit project charter worden opgesteld (week 2);
+Vervolgens zal er geoefend worden met de verschillende data analyse technieken (week 3-5);
+Daarna zal er gezocht worden naar een dataset waarmee we de klantvraag zo goed mogelijk kunnen beantwoorden (week 6);
+Ten slotte zullen we deze data bewerken, coderen, analyseren en hier een conclusie aan verbinden (week 7). 
 
 ## Architecture
-* Data
-  * What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)
-* Data movement from on-prem to Azure using ADF or other data movement tools (Azcopy, EventHub etc.) to move either
-  * all the data, 
-  * after some pre-aggregation on-prem,
-  * Sampled data enough for modeling 
-
-* What tools and data storage/analytics resources will be used in the solution e.g.,
-  * ASA for stream aggregation
-  * HDI/Hive/R/Python for feature construction, aggregation and sampling
-  * AzureML for modeling and web service operationalization
-* How will the score or operationalized web service(s) (RRS and/or BES) be consumed in the business workflow of the customer? If applicable, write down pseudo code for the APIs of the web service calls.
-  * How will the customer use the model results to make decisions
-  * Data movement pipeline in production
-  * Make a 1 slide diagram showing the end to end data flow and decision architecture
-    * If there is a substantial change in the customer's business workflow, make a before/after diagram showing the data flow.
+De data zal een analyse zijn van het gas en elektriciteitsgebruik bij klanten van Liander. 
+Voor de oplossing zal er gebruik gemaakt worden van R-Studio en Excel om het de data te processen. 
 
 ## Communication
-* How will we keep in touch? Weekly meetings?
-* Who are the contact persons on both sides?
+We zullen als team communiceren voornamelijk via whatsapp en afspraken maken. 
+
+
